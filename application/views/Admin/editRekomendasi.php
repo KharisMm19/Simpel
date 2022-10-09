@@ -1,0 +1,82 @@
+<section id="main-content">
+	<section class="wrapper">
+		<br>
+		<center>
+			<h3 style="color: black;">Edit Rekomendasi LHP</h3>
+		</center>
+		<div class="row mt">
+			<div class="col-lg-12">
+				<div class="form-panel">
+					<?php echo validation_errors(); ?>
+					<?php echo (isset( $upload_error)) ? '<div class="alert alert-warning" role="alert">' .$upload_error. '</div>' : ''; ?>
+
+					<?php echo form_open_multipart(current_url(),array('class' => 'form-horizontal style-form','needs-validation','novalidate' => ''));?>
+                    <form>
+                        <div class="form-group" hidden>
+							<label class="col-sm-2 col-sm-2 control-label">ID. Temuan</label>
+							<div class="col-sm-10">
+								<input type="text" name="id_temuan" class="form-control"
+									value="<?php echo set_value('id_temuan', $result->id_temuan) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group" hidden>
+							<label class="col-sm-2 col-sm-2 control-label">ID. LHP</label>
+							<div class="col-sm-10">
+								<input type="text" name="id_lhp" class="form-control"
+									value="<?php echo set_value('id_lhp', $result->id_lhp) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">No. LHP</label>
+							<div class="col-sm-10">
+								<input type="text" name="no_lhp" class="form-control"
+									value="<?php echo set_value('no_lhp', $result->no_lhp) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Judul LHP</label>
+							<div class="col-sm-10">
+								<input type="text" name="judul_lhp" class="form-control"
+									value="<?php echo set_value('judul_lhp', $result->judul_lhp) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Tahun</label>
+							<div class="col-sm-10">
+								<input type="text" name="tahun" class="form-control"
+									value="<?php echo set_value('tahun', $result->tahun) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">SKPD</label>
+							<div class="col-sm-10">
+								<input type="text" name="skpd" class="form-control"
+									value="<?php echo set_value('id_skpd', $result->nama_skpd) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Temuan</label>
+							<div class="col-sm-10">
+								<input type="text" name="temuan" class="form-control"
+									value="<?php echo set_value('temuan', $result->temuan) ?>" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label class="col-sm-2 col-sm-2 control-label">Rekomendasi</label>
+							<div class="col-sm-10">
+								<input type="text" name="rekomendasi" class="form-control"
+									value="<?php echo set_value('rekomendasi', $result->rekomendasi) ?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-offset-2 col-lg-10">
+								<button class="btn btn-theme" type="submit">Save</button>
+								<a class="btn btn-theme04" type="button" href="<?= base_url('Admin/lihatRekomendasi/'.$result->id_temuan) ?>">Cancel</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
